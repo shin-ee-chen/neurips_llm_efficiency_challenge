@@ -582,6 +582,19 @@ llama_2 = [
         _mlp_class="LLaMAMLP",
         intermediate_size=11008,
     ),
+    dict(
+        org="meta-llama",
+        name="flanfull_dolly_500k_iter-Llama-2-7b-hf",
+        vocab_size=32000,
+        padding_multiple=64,
+        n_layer=32,
+        rotary_percentage=1.0,
+        parallel_residual=False,
+        bias=False,
+        _norm_class="RMSNorm",
+        _mlp_class="LLaMAMLP",
+        intermediate_size=11008,
+    ),
     # https://huggingface.co/meta-llama/Llama-2-13b-hf/blob/main/config.json
     dict(
         org="meta-llama",

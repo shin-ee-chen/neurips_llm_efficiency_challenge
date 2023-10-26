@@ -16,10 +16,10 @@ RUN apt-get update && apt-get install -y git
 RUN pip install -r requirements.txt huggingface_hub sentencepiece tokenizers bitsandbytes scipy
 
 # some huggingface_hub versions require that the target dir exists
-RUN mkdir -p checkpoints/epikos/Llama-2-7b-hf-orca
+RUN mkdir -p checkpoints/epikos/flanfull_dolly_500k_iter-Llama-2-7b-hf
 # get open-llama weights: https://github.com/Lightning-AI/lit-gpt/blob/main/tutorials/download_openllama.md
-RUN python scripts/download.py --repo_id epikos/Llama-2-7b-hf-orca  --access_token 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
-RUN python scripts/convert_hf_checkpoint.py --checkpoint_dir checkpoints/epikos/Llama-2-7b-hf-orca
+RUN python scripts/download.py --repo_id epikos/flanfull_dolly_500k_iter-Llama-2-7b-hf  --access_token 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
+RUN python scripts/convert_hf_checkpoint.py --checkpoint_dir checkpoints/epikos/flanfull_dolly_500k_iter-Llama-2-7b-hf
 
 # Copy over single file server
 COPY ./main.py /submission/main.py
