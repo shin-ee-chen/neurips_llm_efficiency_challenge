@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir --upgrade -r fast_api_requirements.txt
 
 RUN apt-get update && apt-get install -y git
 # Install any needed packages specified in requirements.txt that come from lit-gpt plus some optionals
-RUN pip install -r requirements-all.txt huggingface_hub sentencepiece tokenizers bitsandbytes scipy
+RUN pip install -r requirements.txt huggingface_hub sentencepiece tokenizers bitsandbytes scipy
 
 # some huggingface_hub versions require that the target dir exists
 RUN mkdir -p checkpoints/epikos/Llama-2-7b-hf-orca
